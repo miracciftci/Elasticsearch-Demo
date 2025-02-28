@@ -15,11 +15,14 @@ public interface UserRepository extends ElasticsearchRepository<User, String> {
     term   --> tam bire bir eşleşme yapar büyük küçük harflere dikkat eder (örneğin mail gibi field aramlarında kullanılabilir)
     terms   --> birden fazla ifadenin bire bir eşleşmesine bakar eğer biri bile uyuyorsa döndürür
 
-    bool -->  bool sorgusu, AND, OR, NOT gibi mantıksal bağlaçları kullanarak farklı koşulları birleştirir. İçinde must, should, must_not, filter gibi operatörler bulunabilir.
+    bool     ->  bool sorgusu, AND, OR, NOT gibi mantıksal bağlaçları kullanarak farklı koşulları birleştirir. İçinde must, should, must_not, filter gibi operatörler bulunabilir.
     must     → Tüm koşullar sağlanmalı (AND gibi davranır)
     should   → Koşulların en az biri sağlanmalı (OR gibi davranır)
     must_not → Bu koşulu sağlamayanları getirir (NOT gibi davranır)
     filter   → Kesin eşleşmeler için kullanılır, daha hızlıdır ve skor hesaplamaz.
+
+    Range  --> Bir alanin belirli bir araliğa düşüp düşmediğini kontrol eder.
+    Fuzzy  --> Benzer ancak kesin olmayan terimleri aramak için kullanılır.
      */
 
 
