@@ -16,8 +16,15 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
 
     @Override
-    public List<User> findSearchName(String search) {
-        return userRepository.findUsersByNameLike(search);
+    public List<User> findSearchName(String name) {
+        return userRepository.findUsersByNameLike(name);
+        //return userRepository.findSearchByName(name);
+        //return userRepository.findSearchByNameLikeWithNativeQuery(name);
+    }
+
+    @Override
+    public List<User> findSearchNameAndSurname(String name, String surname) {
+        return userRepository.findSearchByNameAndSurname(name, surname);
     }
 
     @Override

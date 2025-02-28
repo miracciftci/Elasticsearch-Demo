@@ -14,9 +14,15 @@ public class UserController {
 
     private final UserServiceImpl userService;
 
-    @GetMapping("/getUsers/{search}")
-    public ResponseEntity<List<User>> getUsers(@PathVariable String search) {
-        List<User> users =  userService.findSearchName(search);
+    @GetMapping("/getUsers/{name}")
+    public ResponseEntity<List<User>> getUsers(@PathVariable String name) {
+        List<User> users =  userService.findSearchName(name);
+        return ResponseEntity.ok(users);
+    }
+
+    @GetMapping("/getUsersByNameAndSurname")
+    public ResponseEntity<List<User>> getUsers(@RequestParam String name, @RequestParam String surname) {
+        List<User> users =  userService.findSearchNameAndSurname(name, surname);
         return ResponseEntity.ok(users);
     }
 
