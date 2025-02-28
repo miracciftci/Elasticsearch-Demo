@@ -70,7 +70,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/users/getUsers/Mira",
+					"raw": "http://localhost:8080/users/getUsers/Mir",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -79,7 +79,40 @@
 					"path": [
 						"users",
 						"getUsers",
-						"Mira"
+						"Mir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users by name and surname",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/getUsersByNameAndSurname?name=Miraç&surname=Çiftçi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"getUsersByNameAndSurname"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Miraç"
+						},
+						{
+							"key": "surname",
+							"value": "Çiftçi"
+						}
 					]
 				}
 			},
